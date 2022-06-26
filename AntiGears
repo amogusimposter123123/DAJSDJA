@@ -1,0 +1,18 @@
+while Enabled and game.RunService.RenderStepped:Wait() do
+spawn(function()
+if not game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") and not game.Players.LocalPlayer.Character:FindFirstChild("RocketJumper") then game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103) end
+for i,v in pairs(game.Players:GetPlayers()) do
+for i,x in pairs(AntiGears) do
+if v ~= game.Players.LocalPlayer and v.Character and v.Character.Humanoid.Health ~= 0 then
+if v.Backpack:FindFirstChild(x) or v.Character:FindFirstChild(x) then
+if game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") then
+game.Players.LocalPlayer.Backpack:WaitForChild("RocketJumper").FireRocket:FireServer(v.Character:FindFirstChild("Head").Position+Vector3.new(0,-1e1,0),v.Character:FindFirstChild("Head").Position)
+elseif game.Players.LocalPlayer.Character:FindFirstChild("RocketJumper") then
+game.Players.LocalPlayer.Character:WaitForChild("RocketJumper").FireRocket:FireServer(v.Character:FindFirstChild("Head").Position+Vector3.new(0,-1e1,0),v.Character:FindFirstChild("Head").Position)
+                        end
+                    end
+                end
+            end
+        end
+    end)
+end
