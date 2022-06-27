@@ -7,7 +7,7 @@ v:Destroy()
 	end
     end
 end
-while Enabled and game.RunService.RenderStepped:Wait() do
+while Enabled and game.RunService.Heartbeat:Wait() do
 spawn(function()
 if not game.Players.LocalPlayer.Backpack:FindFirstChild("RocketJumper") and not game.Players.LocalPlayer.Character:FindFirstChild("RocketJumper") then game:GetService("ReplicatedStorage").Remotes.ToggleAsset:InvokeServer(169602103) end
 for i,v in pairs(game.Players:GetPlayers()) do
